@@ -1,13 +1,21 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package Pilas;
+import java.util.Scanner;
+import java.util.Stack;
 
-/**
- *
- * @author xavie
- */
 public class Ejemplo_3 {
-    
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Ingrese un número decimal: ");
+        int numero = scanner.nextInt();
+
+        Stack<Integer> pila = new Stack<>();
+        while (numero > 0) {
+            pila.push(numero % 2);
+            numero /= 2;
+        }
+
+        System.out.print("Número en binario: ");
+        while (!pila.isEmpty()) {
+            System.out.print(pila.pop());
+        }
+    }
 }
